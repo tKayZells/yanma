@@ -1,6 +1,6 @@
 ## Yet Another Node Messaging App
 
-A (node)[https://nodejs.org/en/] messanging app powered by (expressjs)[https://expressjs.com/] and (socket.io)[https://socket.io/], with front-end built on (react)[https://reactjs.org/]
+A [node](https://nodejs.org/en/) messanging app powered by [expressjs](https://expressjs.com/) and [socket.io](https://socket.io/]), with front-end built on [react](https://reactjs.org/)
 
 ## Installation & Run
 
