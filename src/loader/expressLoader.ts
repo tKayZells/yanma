@@ -14,13 +14,14 @@ export default ( { app }: { app: express.Application } ) => {
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(express.static(path.join(__dirname, '/../client/build')));
 
+    /**
+     * Load Routes
+     */
+    app.use("/api", routes());
+
     // Starting route
-    app.get("/", (req, res) => {
+    app.get("*", (req, res) => {
         return res.status(200).sendFile(path.join(__dirname + '/../client/build/index.html'));
     });
 
-    /**
-     * Load remaining routes 
-     */
-    app.use("/", routes());
 }
