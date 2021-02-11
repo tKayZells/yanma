@@ -1,14 +1,26 @@
 "use strict";
 import express from "express";
 import http from "http";
+import { Server as ioserver } from 'socket.io';
+import expressLoader from "./loader/expressLoader";
+import ioLoader from "./loader/ioLoader";
 
-const app = express();
-const server = http.createServer(app);
+const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('<h1>Hello world</h1>');
-});
+async function start(){
 
-server.listen(3000, () => {
-  console.log('listening on *:3000');
-});
+    const app = express();
+    await expressLoader({ app });
+
+    const server = http.createServer(app);
+
+    const io = new ioserver(server, { });
+
+    await ioLoader({ io });
+
+    server.listen(port, () => {
+      console.log(`Listening at http://localhost:${port}`);
+    });
+}
+
+start();
