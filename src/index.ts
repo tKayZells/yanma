@@ -5,7 +5,7 @@ import { Server as ioserver } from 'socket.io';
 import expressLoader from "./loader/expressLoader";
 import ioLoader from "./loader/ioLoader";
 
-const port = 3000;
+const port = 3001;
 
 async function start(){
 
